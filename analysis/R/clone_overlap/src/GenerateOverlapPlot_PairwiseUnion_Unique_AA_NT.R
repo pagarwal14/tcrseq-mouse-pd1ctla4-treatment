@@ -53,7 +53,8 @@ max
 #png(paste(pairwiseSample,".png",sep=""))
 overlapPlot = ggplot()
 #layer_point = geom_point(mapping = aes(x = df[,2], y = df[,4]), data=df,  size=2)
-dflowfreq=subset(df, df[,3] < 1 & df[,5] < 1)
+# break up the data into low frequency clones and high frequency clones and display AA only for high frequency clones.
+dflowfreq=subset(df, df[,3] < 0.01 & df[,5] < 0.01)
 dfhighreq=df[ !(df[,1] %in% dflowfreq[,1]), ]
 layer_point1 = geom_point(mapping = aes(x = dfhighreq[,2], y = dfhighreq[,4]), data=dfhighreq,  size=2)
 layer_point2 = geom_point(mapping = aes(x = dflowfreq[,2], y = dflowfreq[,4]), data=dflowfreq,  size=0.5)
@@ -61,15 +62,16 @@ layer_point2 = geom_point(mapping = aes(x = dflowfreq[,2], y = dflowfreq[,4]), d
 overlapPlot = overlapPlot + layer_point1 + layer_point2
 #overlapPlot
 overlapPlot = overlapPlot + expand_limits(x = c(0, max)) + expand_limits(y = c(0, max))
-overlapPlot = overlapPlot + scale_x_continuous(labels = comma, breaks=seq(0,max,50000)) + scale_y_continuous(labels = comma, breaks=seq(0,max,50000))
+#change the breaks from 50000 to 500
+overlapPlot = overlapPlot + scale_x_continuous(labels = comma, breaks=seq(0,max,500)) + scale_y_continuous(labels = comma, breaks=seq(0,max,500))
 #overlapPlot
 layer_abline = geom_abline(intercept=0, slope=1, color="blue", linetype="dashed", size=0.05)
 overlapPlot = overlapPlot + layer_abline
 #overlapPlot
-dftext = subset(df, df[,3] > 2 | df[,5] > 2)
+dftext = subset(df, df[,3] > 0.02 | df[,5] > 0.02)
 dftext
-#layer_text = geom_text_repel(data = dftext, aes(x = dftext[,2], y = dftext[,4], label = df[1]))
-layer_text = geom_text(data = dftext, aes(x = dftext[,2], y = dftext[,4], label = dftext[,1]))
+layer_text = geom_text_repel(data = dftext, aes(x = dftext[,2], y = dftext[,4], label = dftext[,1]))
+#layer_text = geom_text(data = dftext, aes(x = dftext[,2], y = dftext[,4], label = dftext[,1]))
 overlapPlot = overlapPlot + layer_text
 #overlapPlot
 overlapPlot = overlapPlot + ggtitle(pairwiseSample)
