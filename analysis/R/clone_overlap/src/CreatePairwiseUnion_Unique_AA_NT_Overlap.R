@@ -26,13 +26,13 @@ resultsdir = "/srv/agarw005/projects/tcr-seq/Erika_MouseCTLA_PD1/tcrseq-mouse-pd
 #
 # First and second sample in the pairwise TSV generation
 #
-sample1 = "ExpU_A_229_tumor" #"ExpU_B_223_tumor"  #401, 402, 403, 501, 504, 506, 602, 603, 604
-sample2 = "ExpU_A_233_tumor" #"Untreated_Controls" #"ExpU_B_217_tumor" #401, 402, 403, 501, 504, 506, 602, 603, 604
+sample1 = "ExpU_C_215_tumor" #
+sample2 = "ExpU_C_231_tumor" #"Untreated_Controls" #"ExpU_B_217_tumor" #401, 402, 403, 501, 504, 506, 602, 603, 604
 #
 # extend by parameterizing baseline/post, treamtment (orienx010, dc-cik), AA/NT, unique/frequency.....
 #
-treatment1 = "Untreated_Controls" #"aPD1_Rx" # "orienx010" "dccik" 
-treatment2 = "Untreated_Controls" #"aPD1_Rx" # "orienx010" "dccik" 
+treatment1 = "aCTLA4_Rx" #"Untreated_Controls" #"aPD1_Rx" #"aCTLA4_Rx" #"aPD1_aCTLA4" #"Treg_depleted" 
+treatment2 = "aCTLA4_Rx" #"Untreated_Controls" #"aPD1_Rx" #"aCTLA4_Rx" #"aPD1_aCTLA4" #"Treg_depleted"
 #
 # Molecule
 #
