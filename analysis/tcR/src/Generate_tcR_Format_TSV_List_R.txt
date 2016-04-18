@@ -1,0 +1,63 @@
+#
+# Code to copy and paste and run on R cmd line to generate tcR format TSV and lists
+#
+#
+groups = c("Untreated_Controls", "CTLA4", "PD1",, "PD1_CTLA4", "Treg_depleted")
+#
+#
+#
+dfUntreated_Controls_ExpU_A_213 = read.table(paste(inputtcRTSVdir, "Untreated_Controls_ExpU_A_213_tumor.tsv", sep=""), stringsAsFactors=F, header=T, sep="\t")
+dfUntreated_Controls_ExpU_A_219 = read.table(paste(inputtcRTSVdir, "Untreated_Controls_ExpU_A_219_tumor.tsv", sep=""), stringsAsFactors=F, header=T, sep="\t")
+dfUntreated_Controls_ExpU_A_222 = read.table(paste(inputtcRTSVdir, "Untreated_Controls_ExpU_A_222_tumor.tsv", sep=""), stringsAsFactors=F, header=T, sep="\t")
+dfUntreated_Controls_ExpU_A_229 = read.table(paste(inputtcRTSVdir, "Untreated_Controls_ExpU_A_229_tumor.tsv", sep=""), stringsAsFactors=F, header=T, sep="\t")
+dfUntreated_Controls_ExpU_A_233 = read.table(paste(inputtcRTSVdir, "Untreated_Controls_ExpU_A_233_tumor.tsv", sep=""), stringsAsFactors=F, header=T, sep="\t")
+#
+#
+#
+dfPD1_Rx_ExpU_B_217 = read.table(paste(inputtcRTSVdir, "aPD1_Rx_ExpU_B_217_tumor.tsv", sep=""), stringsAsFactors=F, header=T, sep="\t")
+dfPD1_Rx_ExpU_B_223 = read.table(paste(inputtcRTSVdir, "aPD1_Rx_ExpU_B_223_tumor.tsv", sep=""), stringsAsFactors=F, header=T, sep="\t")
+dfPD1_Rx_ExpU_B_228 = read.table(paste(inputtcRTSVdir, "aPD1_Rx_ExpU_B_228_tumor.tsv", sep=""), stringsAsFactors=F, header=T, sep="\t")
+dfPD1_Rx_ExpU_B_234 = read.table(paste(inputtcRTSVdir, "aPD1_Rx_ExpU_B_234_tumor.tsv", sep=""), stringsAsFactors=F, header=T, sep="\t")
+#
+#
+#
+dfCTLA4_Rx_ExpU_C_215 = read.table(paste(inputtcRTSVdir, "aCTLA4_Rx_ExpU_C_215_tumor.tsv", sep=""), stringsAsFactors=F, header=T, sep="\t")
+dfCTLA4_Rx_ExpU_C_220 = read.table(paste(inputtcRTSVdir, "aCTLA4_Rx_ExpU_C_220_tumor.tsv", sep=""), stringsAsFactors=F, header=T, sep="\t")
+dfCTLA4_Rx_ExpU_C_231 = read.table(paste(inputtcRTSVdir, "aCTLA4_Rx_ExpU_C_231_tumor.tsv", sep=""), stringsAsFactors=F, header=T, sep="\t")
+#
+#
+#
+dfPD1_CTLA4_ExpU_D_216 = read.table(paste(inputtcRTSVdir, "aPD1_aCTLA4_ExpU_D_216_tumor.tsv", sep=""), stringsAsFactors=F, header=T, sep="\t")
+dfPD1_CTLA4_ExpU_D_226 = read.table(paste(inputtcRTSVdir, "aPD1_aCTLA4_ExpU_D_226_tumor.tsv", sep=""), stringsAsFactors=F, header=T, sep="\t")
+dfPD1_CTLA4_ExpU_D_230 = read.table(paste(inputtcRTSVdir, "aPD1_aCTLA4_ExpU_D_230_tumor.tsv", sep=""), stringsAsFactors=F, header=T, sep="\t")
+#
+#
+#
+Untreated_Controls.list = list(Untreated_Controls_ExpU_A_213=dfUntreated_Controls_ExpU_A_213, Untreated_Controls_ExpU_A_219=dfUntreated_Controls_ExpU_A_219, Untreated_Controls_ExpU_A_222=dfUntreated_Controls_ExpU_A_222, Untreated_Controls_ExpU_A_229=dfUntreated_Controls_ExpU_A_229, Untreated_Controls_ExpU_A_233=dfUntreated_Controls_ExpU_A_233)
+#
+PD1.list = list(PD1_Rx_ExpU_B_217=dfPD1_Rx_ExpU_B_217, PD1_Rx_ExpU_B_223=dfPD1_Rx_ExpU_B_223, PD1_Rx_ExpU_B_228=dfPD1_Rx_ExpU_B_228, PD1_Rx_ExpU_B_234=dfPD1_Rx_ExpU_B_234)
+#
+CTLA4.list = list(CTLA4_Rx_ExpU_C_215=dfCTLA4_Rx_ExpU_C_215, CTLA4_Rx_ExpU_C_220=dfCTLA4_Rx_ExpU_C_220, CTLA4_Rx_ExpU_C_231=dfCTLA4_Rx_ExpU_C_231)
+#
+PD1_CTLA4.list = list(PD1_CTLA4_ExpU_D_216=dfPD1_CTLA4_ExpU_D_216, PD1_CTLA4_ExpU_D_226=dfPD1_CTLA4_ExpU_D_226, PD1_CTLA4_ExpU_D_230=dfPD1_CTLA4_ExpU_D_230)
+#
+#
+# CHECK
+#
+#
+str(Untreated_Controls.list)
+str(PD1.list)
+str(CTLA4.list)
+str(PD1_CTLA4.list)
+full.list=c(Untreated_Controls.list, PD1.list, CTLA4.list, PD1_CTLA4.list)
+str(full.list)
+names(full.list)
+#
+#
+#
+str(Untreated_Controls.list[["Untreated_Controls_ExpU_A_213"]])
+#n = "Untreated_Controls_ExpU_A_219"
+#str(Untreated_Controls.list[[n]])
+#str(Untreated_Controls.list[[names(Untreated_Controls.list)[2]]])
+#str(Untreated_Controls.list[[names(Untreated_Controls.list)[3]]])
+
