@@ -8,7 +8,7 @@ library(ggrepel)
 #
 print("Begin...")
 inputdir = "/srv/agarw005/projects/tcr-seq/Erika_MouseCTLA_PD1/tcrseq-mouse-pd1ctla4-treatment/analysis/R/clone_overlap/data/input/combinedgroups/"
-outputdir = "/srv/agarw005/projects/tcr-seq/Erika_MouseCTLA_PD1/tcrseq-mouse-pd1ctla4-treatment/analysis/R/clone_overlap/data/results/combinedgroups/"
+outputdir = "/srv/agarw005/projects/tcr-seq/Erika_MouseCTLA_PD1/tcrseq-mouse-pd1ctla4-treatment/analysis/R/clone_overlap/data/results/combinedgroups_top2Per/"
 cmdFlag = T # change to T if taking the name of the pairwise TSV file from command line
 #
 if(cmdFlag==T){
@@ -37,7 +37,7 @@ print(paste("pairwiseSample = ", pairwiseSample))
 # read in the file with the list of unique AA clones across all samples which have a unique numerical identifier - use that for the label in the plot instead of the AA sequence
 # read in as factors - so can make sure number of levels same as number of row for uniqueness
 #
-dfUniqAALab = read.table("/srv/agarw005/projects/tcr-seq/Erika_MouseCTLA_PD1/tcrseq-mouse-pd1ctla4-treatment/analysis/R/data/uniqueCDR3List/AA_UniqueCDR3List.tsv", sep="\t", header=T)
+dfUniqAALab = read.table("/srv/agarw005/projects/tcr-seq/Erika_MouseCTLA_PD1/tcrseq-mouse-pd1ctla4-treatment/analysis/R/data/uniqueCDR3List/AA_UniqueCDR3ListTop2Per.tsv", sep="\t", header=T)
 str(dfUniqAALab)
 #
 #
